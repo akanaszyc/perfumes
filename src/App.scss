@@ -1,0 +1,95 @@
+@import './variables.scss';
+
+#root {
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.main{
+  margin: 0 auto;
+  width: 375px;
+  height: 667px;
+  background-color: $background-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.landingbutton{
+  width: 200px;
+  height: 50px;
+  border-radius: 8px;
+  background-color: $secondary-color;
+  font-weight: 700;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  color: $text-color-two;
+  font-weight: 500;
+}
+.registrationbutton{
+  width: 130px;
+  height: 30px;
+  margin-top: 40px;
+  border-radius: 8px;
+  background-color: $text-color-two;
+  font-weight: 700;
+  padding: 2px;
+  align-self: center;
+}
+.back-register-button{
+  width: 200px;
+  height: 50px;
+  border: none;
+  background-color: $secondary-color;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  margin: 40px;
+  color: $text-color-two
+}
+
+.registerheader{
+  width: 150px;
+  height: 40px;
+  margin: 20px;
+  background-color: $secondary-color;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
+}
+.input{
+  background-color: $secondary-color;
+  width: 200px;
+  height: 20px;
+  border: none;
+  border-radius: 12px;
+}
+.input-login{
+  background-color: $secondary-color;
+  width: 150px;
+  height: 30px;
+  border: none;
+  border-radius: 12px;
+}
+
+.inputtext{
+  background-color: $secondary-color;
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+}
+
+.error{
+  font-size: 0.7rem;
+}
