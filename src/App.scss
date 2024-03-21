@@ -93,3 +93,119 @@
 .error{
   font-size: 0.7rem;
 }
+
+.tab-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  width: 100%;
+  background-color: $secondary-color;
+  color: $text-color-two;
+  box-sizing: border-box;
+  padding: 15px;
+ 
+}
+
+.main-tab{
+  margin: 0 auto;
+  width: 375px;
+  height: 667px;
+  background-color: $background-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.account-functions{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 60%;
+  gap: 20px;
+
+}
+.account-function{
+  background-color: $secondary-color;
+  width: 200px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}
+
+.account-data{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 60%;
+  width: 300px;
+  color: $text-color-two;
+}
+.button-edit{
+  width: 150px;
+  height: 50px;
+  border: none;
+  background-color: $secondary-color;
+  border-radius: 12px;
+  font-size: 1rem;
+  margin: 40px;
+  color: $text-color-one;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wishlist-area{
+  height: 100%;
+  width: 300px;
+  background-color: $thirdy-color;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.wishlist-item{
+  display: flex;
+  height: 25%;
+  justify-content: center;
+
+}
+.wishlist-name{
+  p{
+    background-color: $text-color-two;
+    padding: 10px;
+    width: 200px;
+    display: block;
+    border-radius: 12px;
+  }
+}
+.wishlist-icons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  div{
+    background-color: $secondary-color;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+  }
+}
+.add-wishlist{
+  width: 70px;
+  align-self: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border: none;
+  background-color: $text-color-two;
+  border-radius: 12px;
+  font-size: 1rem;
+}
