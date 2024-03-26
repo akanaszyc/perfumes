@@ -2,6 +2,21 @@ import React, { useState } from 'react'
 import { createClient } from '@supabase/supabase-js'
 
 export default function AddWishlist() {
+    const [wishlistItem, setWishlistItem] = useState([]);
+    const [adding, setAdding] = useState(false);
+
+    const handleAddClick = () => {
+        setAdding(true);
+    }
+
+    const handleSaveClick = () => {
+        setAdding(false);
+        setWishlistItem([...wishlistItem, wishlistItem]);
+        setWishlistItem({
+            
+        })
+    }
+
 
     return(
 

@@ -85,7 +85,7 @@ export default function Mycollection() {
                 <div>icon</div>
                 <div>icon</div>
                 <div>icon</div>
-                </div>
+                </div>n
             </div>
             ) : (
                 <div className='main-tab'>
