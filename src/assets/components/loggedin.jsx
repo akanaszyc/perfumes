@@ -3,6 +3,8 @@ import { createClient } from '@supabase/supabase-js'
 
 export default function Loggedin() {
 
+    //dodać routing tak aby po kliknięciu w button przejść do konkretnego okna i ikona konta//
+    
 
 return(
     <div className='main-tab'>

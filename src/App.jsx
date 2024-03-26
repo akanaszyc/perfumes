@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import './App.scss'
 import './variables.scss'
@@ -17,15 +19,39 @@ import RegistrationMain from './assets/components/register'
 import Login from './assets/components/login'
 import Loggedin from './assets/components/loggedin'
 import Account from './assets/components/account'
+import Mycollection from './assets/components/mycollection'
+import AddToCollection from './assets/components/addcollection'
+import CollectionItem from './assets/components/collectionitem'
+import SearchNotes from './assets/components/searching'
 import Wishlist from './assets/components/wishlist'
-// const supabaseUrl = 'https://mcfzyulkphxtclohghgu.supabase.co';
-// const supabaseKey = process.env.REACT_APP_SUPABASE_KEY;
-// const supabase = createClient(supabaseUrl, supabaseKey);
+import AddWishlist from './assets/components/addwishlist'
+import Layout from './assets/components/Layout'
+import supabase from './config'
 
 export default function App() {
+  useEffect(() => {
+
+    const get = async () => {
+      let { data, error } = await supabase
+.from('profiles')
+.select('*')
+console.log(data)
+    }
+    get()
+        
+  }, [])
   return(
-    <>
-    <Wishlist/>
-    </>
+  
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Layout/>}>
+      <Route index element={<Account/>}/>
+      <Route path='mycollection' element={<Mycollection/>}/>
+      <Route path='searching' element={<SearchNotes/>}/>
+      <Route path='wishlist' element={<Wishlist/>}/>
+      </Route>
+    </Routes>
+    </BrowserRouter>
+    
   )
 }

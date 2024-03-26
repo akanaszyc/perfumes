@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
-import { createClient } from '@supabase/supabase-js'
-// const supabaseUrl = 'https://mcfzyulkphxtclohghgu.supabase.co';
-// const supabaseKey = process.env.REACT_APP_SUPABASE_KEY;
-// const supabase = createClient(supabaseUrl, supabaseKey);
+import supabase from '../../config';
 
 export default function RegistrationMain() {
     const [userData, setUserData] = useState({
+        id: '',
         nick: '',
         email: '',
         password: '',
@@ -56,6 +54,7 @@ export default function RegistrationMain() {
         try{
             const { data, error } = await supabase.from('profiles').insert([
                 {
+                    id: userData.id,
                     nick: userData.nick,
                     email: userData.email,
                     password: userData.password,
@@ -70,7 +69,6 @@ export default function RegistrationMain() {
                 nick: '',
                 email: '',
                 password: '',
-                repeatpassword: '',
                 notes: '',
             });
         }catch (error) {
@@ -99,19 +97,21 @@ export default function RegistrationMain() {
         <input className='input' type='password' id='password' name='password' value={userData.password} onChange={handleUserChange}></input>
         {errors.password && <div className='error'>{errors.password}</div>}
 
-        <label htmlFor='rpassword'>repeat password</label>
-        <input className='input' type='password' id='rpassword' name='rpassword' value={userData.repeatpassword} onChange={handleUserChange}></input>
+        <label htmlFor='repeatpassword'>repeat password</label>
+        <input className='input' type='password' id='repeatpassword' name='repeatpassword' value={userData.repeatpassword} onChange={handleUserChange}></input>
         {errors.repeatpassword && <div className='error'>{errors.repeatpassword}</div>}
 
         <label htmlFor='notes'>tell us your favourite notes</label>
         <input className='inputtext' type='textarea' id='notes' name='notes' value={userData.notes} onChange={handleUserChange}></input>
         
-        <button type='submit' className='registrationbutton'>LET'S GO</button>
+        <button type='submit' className='registrationbutton'onClick={handleFormSubmit}>LET'S GO</button>
         </form>
         
        </div>
         </>
     )
 }
+
+
 
 
