@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { createClient } from '@supabase/supabase-js'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faUser} from '@fortawesome/free-solid-svg-icons';
 
 export default function AddWishlist() {
     const [wishlistItem, setWishlistItem] = useState([]);
@@ -13,7 +15,7 @@ export default function AddWishlist() {
         setAdding(false);
         setWishlistItem([...wishlistItem, wishlistItem]);
         setWishlistItem({
-            
+
         })
     }
 
@@ -40,8 +42,7 @@ export default function AddWishlist() {
         <div>icon</div>
         <div>icon</div>
         <div>icon</div>
-        <div>icon</div>
-        <div>icon</div>
+
         </div>
     </div>
     )

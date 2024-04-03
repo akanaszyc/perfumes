@@ -42,16 +42,17 @@ console.log(data)
   }, [])
   return(
   
-    <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<Layout/>}>
-      <Route index element={<Account/>}/>
-      <Route path='mycollection' element={<Mycollection/>}/>
-      <Route path='searching' element={<SearchNotes/>}/>
-      <Route path='wishlist' element={<Wishlist/>}/>
-      </Route>
-    </Routes>
-    </BrowserRouter>
+    <LandingMain></LandingMain>
+    // <BrowserRouter>
+    // <Routes>
+    //   <Route path='/' element={<Layout/>}>
+    //   <Route index element={<Account/>}/>
+    //   <Route path='mycollection' element={<Mycollection/>}/>
+    //   <Route path='searching' element={<SearchNotes/>}/>
+    //   <Route path='wishlist' element={<Wishlist/>}/>
+    //   </Route>
+    // </Routes>
+    // </BrowserRouter>
     
   )
 }

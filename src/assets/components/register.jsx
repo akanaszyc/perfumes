@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import supabase from '../../config';
+import { v4 as uuidv4 } from 'uuid';
+
+const uuid = uuidv4();
 
 export default function RegistrationMain() {
     const [userData, setUserData] = useState({
-        id: '',
+        id:'',
         nick: '',
         email: '',
         password: '',
-        repeatpassword: '',
-        notes: '',
+        repeatpassword:'',
+        mynotes: '',
     });
     const [errors, setErrors] = useState({});
 
@@ -50,31 +53,32 @@ export default function RegistrationMain() {
     const handleFormSubmit = async (e) => {
         e.preventDefault();
 
-       if(validateForm()) {
-        try{
-            const { data, error } = await supabase.from('profiles').insert([
-                {
-                    id: userData.id,
-                    nick: userData.nick,
-                    email: userData.email,
-                    password: userData.password,
-                    notes: userData.notes
+        if (validateForm()) {
+            try {
+                const { data, error } = await supabase.from('profiles').insert([
+                    {
+                        id: uuid, // Replace generateUniqueId() with your function to generate unique IDs
+                        nick: userData.nick,
+                        email: userData.email,
+                        password: userData.password,
+                        mynotes: userData.mynotes
+                    }
+                ]).select();
+                if (error) {
+                    throw error;
                 }
-            ]);
-            if(error) {
-                throw error;
+                console.log('Added to database', data);
+                setUserData({
+                    nick: '',
+                    email: '',
+                    password: '',
+                    mynotes: '',
+                });
+            } catch (error) {
+                console.error('Error adding data to database', error);
             }
-            console.log('Added to database', data);
-            setUserData({
-                nick: '',
-                email: '',
-                password: '',
-                notes: '',
-            });
-        }catch (error) {
-            console.error('Error adding data to database', error);
-        }
-    };
+        };
+        
 
        }
 
@@ -101,8 +105,8 @@ export default function RegistrationMain() {
         <input className='input' type='password' id='repeatpassword' name='repeatpassword' value={userData.repeatpassword} onChange={handleUserChange}></input>
         {errors.repeatpassword && <div className='error'>{errors.repeatpassword}</div>}
 
-        <label htmlFor='notes'>tell us your favourite notes</label>
-        <input className='inputtext' type='textarea' id='notes' name='notes' value={userData.notes} onChange={handleUserChange}></input>
+        <label htmlFor='mynotes'>tell us your favourite notes</label>
+        <input className='inputtext' type='textarea' id='mynotes' name='mynotes' value={userData.mynotes} onChange={handleUserChange}></input>
         
         <button type='submit' className='registrationbutton'onClick={handleFormSubmit}>LET'S GO</button>
         </form>

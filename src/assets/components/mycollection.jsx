@@ -1,4 +1,10 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faUser} from '@fortawesome/free-solid-svg-icons';
+import {faList} from '@fortawesome/free-solid-svg-icons';
+import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
+import {faHeartCirclePlus} from '@fortawesome/free-solid-svg-icons';
+import {faTrash} from '@fortawesome/free-solid-svg-icons';
 
 export default function Mycollection() {
     const [collectionItems, setCollectionItems] = useState([]);
@@ -45,8 +51,8 @@ export default function Mycollection() {
             {adding ? (
                 <div className='main-tab'>
                 <div className='tab-header'>
-                    <p>nick</p>
-                    <div>icon</div>
+                <div>nick</div>
+                    <div className='accont-icon-font'><FontAwesomeIcon icon={faUser} /></div>
                 </div>
                 <div className='add-collection-area'>
                     <form className='add-collection-form'>
@@ -82,16 +88,16 @@ export default function Mycollection() {
                     
                 </div>
                 <div className='tab-header'>
-                <div>icon</div>
-                <div>icon</div>
-                <div>icon</div>
-                </div>n
+                <div><FontAwesomeIcon icon={faList}/></div>
+                <div><FontAwesomeIcon icon={faMagnifyingGlass}/></div>
+                <div><FontAwesomeIcon icon={faHeartCirclePlus}/></div>
+                </div>
             </div>
             ) : (
                 <div className='main-tab'>
                 <div className='tab-header'>
-                    <p>nick</p>
-                    <div>icon</div>
+                <div>nick</div>
+                    <div className='accont-icon-font'><FontAwesomeIcon icon={faUser} /></div>
                 </div>
                 <div className='collection-area'>
                     {collectionItems.map((item, index) => (
@@ -99,8 +105,7 @@ export default function Mycollection() {
                             <div className='collection-name'>
                                 <p>{item.name}</p>
                                 <div className='collection-icons'>
-                                    <div>icon</div>
-                                    <div>icon</div>
+                                    <div><FontAwesomeIcon icon={faTrash}/></div>
                                 </div>
                             </div>
                         </div>
@@ -108,9 +113,9 @@ export default function Mycollection() {
                     <button className='add-collection' onClick={handleAddClick}>add</button>
                 </div>
                 <div className='tab-header'>
-                <div>icon</div>
-                <div>icon</div>
-                <div>icon</div>
+                <div><FontAwesomeIcon icon={faList}/></div>
+                <div><FontAwesomeIcon icon={faMagnifyingGlass}/></div>
+                <div><FontAwesomeIcon icon={faHeartCirclePlus}/></div>
                 </div>
             </div>
 

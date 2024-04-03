@@ -1,5 +1,11 @@
 import React, { useState } from 'react'
 import { createClient } from '@supabase/supabase-js'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faUser} from '@fortawesome/free-solid-svg-icons';
+import {faList} from '@fortawesome/free-solid-svg-icons';
+import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
+import {faHeartCirclePlus} from '@fortawesome/free-solid-svg-icons';
+import {faTrash} from '@fortawesome/free-solid-svg-icons';
 
 export default function SearchNotes() {
     //wstawienie do select wszystkich zapisanych nut//
@@ -10,8 +16,8 @@ export default function SearchNotes() {
     return(
         <div className='main-tab'>
         <div className='tab-header'>
-            <p>nick</p>
-            <div>icon</div>
+        <div>nick</div>
+                    <div className='accont-icon-font'><FontAwesomeIcon icon={faUser} /></div>
         </div>
         <div className='search-request'>
             <p> which notes you are looing for?</p>
@@ -22,9 +28,9 @@ export default function SearchNotes() {
             <p>output</p>
         </div>
         <div className='tab-header'>
-        <div>icon</div>
-        <div>icon</div>
-        <div>icon</div>
+        <div><FontAwesomeIcon icon={faList}/></div>
+        <div><FontAwesomeIcon icon={faMagnifyingGlass}/></div>
+        <div><FontAwesomeIcon icon={faHeartCirclePlus}/></div>
         </div>
     </div>
     )

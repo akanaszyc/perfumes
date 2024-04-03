@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { createClient } from '@supabase/supabase-js'
+import supabase from '../../config';
+import Account from './account';
 
 
 export default function Login() { 
@@ -20,7 +22,7 @@ export default function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const {user, error } = await SupabaseAuthClient.auth.signIn({
+            const {user, error } = await supabase.auth.signInWithPassword({
                 nick: loginData.nick,
                 password: loginData.password,
             })
@@ -28,7 +30,6 @@ export default function Login() {
             if(error) {
                 setError(error.message);
             }else{
-                //coś ma sie wykonać//
                 console.log('User:', user);
             }
         }catch (eror) { 
@@ -53,7 +54,6 @@ export default function Login() {
 
         <button type='submit' className='registrationbutton'>log in</button>
        </form>
-       <button className='back-register-button'>or register if you don't have an account</button>
        </div>
     )
 }
