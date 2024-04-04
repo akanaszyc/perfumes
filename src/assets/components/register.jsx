@@ -6,7 +6,6 @@ const uuid = uuidv4();
 
 export default function RegistrationMain() {
     const [userData, setUserData] = useState({
-        id:'',
         nick: '',
         email: '',
         password: '',
@@ -50,20 +49,20 @@ export default function RegistrationMain() {
     }
 
 
-    const handleFormSubmit = async (e) => {
+    async function handleFormSubmit() {
         e.preventDefault();
 
         if (validateForm()) {
             try {
-                const { data, error } = await supabase.from('profiles').insert([
+                const { data, error } = await supabase.auth.signUp([
                     {
-                        id: uuid, // Replace generateUniqueId() with your function to generate unique IDs
                         nick: userData.nick,
                         email: userData.email,
                         password: userData.password,
-                        mynotes: userData.mynotes
+                        mynotes: userData.mynotes,
+                        
                     }
-                ]).select();
+                ]);
                 if (error) {
                     throw error;
                 }
@@ -72,6 +71,7 @@ export default function RegistrationMain() {
                     nick: '',
                     email: '',
                     password: '',
+                    repeatpassword:'',
                     mynotes: '',
                 });
             } catch (error) {
@@ -108,7 +108,7 @@ export default function RegistrationMain() {
         <label htmlFor='mynotes'>tell us your favourite notes</label>
         <input className='inputtext' type='textarea' id='mynotes' name='mynotes' value={userData.mynotes} onChange={handleUserChange}></input>
         
-        <button type='submit' className='registrationbutton'onClick={handleFormSubmit}>LET'S GO</button>
+        <button type='submit' className='registrationbutton'>LET'S GO</button>
         </form>
         
        </div>
