@@ -16,9 +16,7 @@ export default function Mycollection() {
 
     const handleSaveClick = () => {
         setAdding(false);
-        // Add the new collection item to the collectionItems array
         setCollectionItems([...collectionItems, collectionItem]);
-        // Clear the input fields after saving
         setCollectionItem({
             name: '',
             house: '',
@@ -105,7 +103,7 @@ export default function Mycollection() {
                             <div className='collection-name'>
                                 <p>{item.name}</p>
                                 <div className='collection-icons'>
-                                    <div><FontAwesomeIcon icon={faTrash}/></div>
+                                    <button className='button-delete'><FontAwesomeIcon icon={faTrash}/></button>
                                 </div>
                             </div>
                         </div>

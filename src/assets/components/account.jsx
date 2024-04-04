@@ -55,6 +55,9 @@ export default function Account() {
             ...accountData,
             [name]: value,
         })
+        // async function signOut() {
+        //     const { error } = await supabase.auth.signOut()
+        //   }
     }
 
     return( 

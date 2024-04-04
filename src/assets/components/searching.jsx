@@ -8,9 +8,17 @@ import {faHeartCirclePlus} from '@fortawesome/free-solid-svg-icons';
 import {faTrash} from '@fortawesome/free-solid-svg-icons';
 
 export default function SearchNotes() {
-    //wstawienie do select wszystkich zapisanych nut//
-    //wyrzucanie w output perfumy z wybranymi nutami//
-    //routing na iconach//
+    
+    // async function fetchData() {
+    //     const { data, error } = await supabase.from('profiles').select('*');
+      
+    //     if (error) {
+    //       console.error('Error fetching data:', error);
+    //       return;
+    //     }
+      
+    //     console.log('Fetched data:', data);
+    //   }
 
 
     return(

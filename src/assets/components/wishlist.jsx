@@ -79,7 +79,7 @@ export default function Wishlist() {
                         <div className='collection-name'>
                             <p>{item.name}</p>
                             <div className='collection-icons'>
-                                <div><FontAwesomeIcon icon={faTrash}/></div>
+                                <button className='button-delete'><FontAwesomeIcon icon={faTrash}/></button>
                             </div>
                         </div>
                     </div>
