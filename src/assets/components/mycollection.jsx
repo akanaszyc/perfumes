@@ -44,6 +44,42 @@ export default function Mycollection() {
         when:'',
     });
 
+
+    // const handleSaveClickSupa = async () => {
+    //     try {
+        
+    //         const { data, error } = await supabase.from('mycollection').insert([
+    //             {
+    //                 name: collectionItem.name,
+    //                 house: collectionItem.house,
+    //                 notes: collectionItem.notes,
+    //                 type: collectionItem.type,
+    //                 points:collectionItem.points,
+    //                 when: collectionItem.when,
+    //             }
+    //         ])
+            
+    //         if (error) {
+    //             throw error;
+    //         }
+
+            
+    //         setAccountData(data);
+
+            
+    //         setAdding(false);
+    //     } catch (error) {
+    //         console.error('Error updating account data:', error.message);
+    //     }
+    // };
+    // const deleteItem = async (itemName) => {
+    //     try {
+    //       await supabase.from('mycollection').delete().eq('name',itemName );
+    //       setCollectionItems(collectionItems.filter((item) => collectionItems.name != collectionItems.name));
+    //     } catch (error) {
+    //       console.log('error', error);
+    //     }
+    // };
     return(
         <div>
             {adding ? (

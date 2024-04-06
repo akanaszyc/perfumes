@@ -6,6 +6,7 @@ import {faList} from '@fortawesome/free-solid-svg-icons';
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 import {faHeartCirclePlus} from '@fortawesome/free-solid-svg-icons';
 import {faTrash} from '@fortawesome/free-solid-svg-icons';
+import supabase from '../../config';
 
 export default function Wishlist() {
     const [wishlistItems, setWishlistItems] = useState([]);
@@ -38,6 +39,39 @@ export default function Wishlist() {
         brand: '',
         notes: '',
     })
+    // const handleSaveClickSupa = async () => {
+    //     try {
+        
+    //         const { data, error } = await supabase.from('wishlist').insert([
+    //             {
+    //                 name: wishlistItem.name,
+    //                 brand: wishlistItem.brand,
+    //                 notes: wishlistItem.notes,
+    //                 
+    //             }
+    //         ])
+            
+    //         if (error) {
+    //             throw error;
+    //         }
+
+            
+    //         setAccountData(data);
+
+            
+    //         setAdding(false);
+    //     } catch (error) {
+    //         console.error('Error updating account data:', error.message);
+    //     }
+    // };
+    // const deleteItem = async (itemName) => {
+    //     try {
+    //       await supabase.from('wishlist').delete().eq('name',itemName );
+    //       setWishlistItems(wishlistItems.filter((item) => wishlistItem.name != wishlistItem.name));
+    //     } catch (error) {
+    //       console.log('error', error);
+    //     }
+    // };
 
     return(
 
